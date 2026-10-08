@@ -1,0 +1,330 @@
+/* Modern Light Theme Design System for Maddock Garage Doors LLC */
+:root {
+  --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Color Palette - Premium Light Theme & #397FF5 Electric Blue Brand Color */
+  --brand-primary: #397FF5;
+  --brand-hover: #2563EB;
+  --brand-dark: #1E40AF;
+  --brand-light: #EFF6FF;
+  --brand-tint: rgba(57, 127, 245, 0.08);
+  --brand-glow: rgba(57, 127, 245, 0.25);
+
+  --bg-light: #F8FAFC;
+  --bg-white: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+  --bg-card: #FFFFFF;
+
+  --text-dark: #0F172A;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+
+  --border-light: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --border-active: #397FF5;
+
+  --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 10px 25px -5px rgba(57, 127, 245, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 20px 40px -15px rgba(15, 23, 42, 0.12);
+  --shadow-blue: 0 12px 30px -5px rgba(57, 127, 245, 0.3);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 9999px;
+
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--bg-light);
+  color: var(--text-primary);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--bg-light);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-primary);
+}
+
+/* Typography Utility */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, #397FF5 0%, #1D4ED8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.sub-heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  background: var(--brand-tint);
+  border: 1px solid rgba(57, 127, 245, 0.2);
+  color: var(--brand-primary);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* Base Layout Containers */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+.section-padding {
+  padding: 96px 0;
+}
+
+@media (max-width: 768px) {
+  .section-padding {
+    padding: 56px 0;
+  }
+}
+
+/* Clean White Card Surface */
+.clean-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.clean-card-hover:hover {
+  transform: translateY(-5px);
+  border-color: rgba(57, 127, 245, 0.4);
+  box-shadow: var(--shadow-md);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  text-decoration: none;
+  border: none;
+  position: relative;
+}
+
+.btn-primary {
+  background: var(--brand-primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-blue);
+}
+
+.btn-primary:hover {
+  background: var(--brand-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 32px -5px rgba(57, 127, 245, 0.45);
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-secondary:hover {
+  background: var(--brand-light);
+  color: var(--brand-primary);
+  border-color: rgba(57, 127, 245, 0.3);
+  transform: translateY(-2px);
+}
+
+.btn-emerald {
+  background: #10B981;
+  color: #ffffff;
+  box-shadow: 0 10px 20px -5px rgba(16, 185, 129, 0.35);
+}
+
+.btn-emerald:hover {
+  background: #059669;
+  transform: translateY(-2px);
+}
+
+.btn-lg {
+  padding: 16px 32px;
+  font-size: 1.05rem;
+}
+
+.btn-sm {
+  padding: 8px 18px;
+  font-size: 0.88rem;
+}
+
+/* Floating Hotline Widget */
+.floating-hotline {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 22px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--brand-primary);
+  border-radius: var(--radius-full);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  text-decoration: none;
+  color: var(--text-dark);
+  transition: var(--transition-smooth);
+}
+
+.floating-hotline:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(57, 127, 245, 0.25);
+}
+
+/* Lightbox Modal */
+.lightbox-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 860px;
+  width: 100%;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+/* Badges & Pills */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  color: var(--text-secondary);
+}
+
+.badge-blue {
+  background: var(--brand-light);
+  border-color: rgba(57, 127, 245, 0.25);
+  color: var(--brand-primary);
+}
+
+.badge-emerald {
+  background: #ECFDF5;
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #059669;
+}
+
+/* Grid Layout Systems */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+
+@media (max-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; gap: 20px; }
+}
+
+.mobile-toggle { display: none; }
+
+@media (max-width: 991px) {
+  .desktop-nav { display: none !important; }
+  .mobile-toggle { display: block !important; }
+  .hero-grid { grid-template-columns: 1fr !important; gap: 36px !important; }
+  .about-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
+  .transformation-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .service-area-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 32px !important; }
+}
+
+@media (max-width: 640px) {
+  .desktop-only { display: none !important; }
+  .footer-grid { grid-template-columns: 1fr !important; }
+  .hero-features { grid-template-columns: 1fr !important; }
+  .stats-grid { grid-template-columns: 1fr !important; }
+  .promo-grid { grid-template-columns: 1fr !important; }
+  .visualizer-grid { grid-template-columns: 1fr !important; }
+}
+
+.clean-card-hover:hover .gallery-img-hover {
+  transform: scale(1.04);
+}
+
+.clean-card-hover:hover .hover-overlay {
+  opacity: 1 !important;
+}
